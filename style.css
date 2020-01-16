@@ -1,1 +1,38 @@
 /* only make pretty if there is time. BARE BONES NEEDS IMAGE IN HTML */
+
+body {
+    background-color: burlywood;
+}
+
+header {
+    font-family: cursive;
+}
+
+#intro {
+    font-family: fantasy;
+}
+
+img {
+    width: 200px;
+    height: 100px;
+} 
+
+
+
+/*get rid of radio button*/
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+ /*use the image as a radio button*/
+[type=radio]:checked + img {
+    outline: 5px dotted #f00;
+    border-radius: 50%;
+}
+
+[type=radio]:focus {
+    border-radius: 50%;
+}

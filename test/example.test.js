@@ -1,38 +1,44 @@
+import { checkResult } from '../throwfunction.js';
 
-//need to test it all
 const test = QUnit.test;
-
 QUnit.module('checkResult');
 
 test('Paper beats rock', assert => {
-    // arrange
     const player = 'paper';
     const computer = 'rock';
     const expected = 'win';
-    // act
     const result = checkResult(player, computer);
-    // assert
     assert.equal(result, expected);
 });
 
-test('Player loses', assert => {
-    // arrange
+test('Rock beats scissors', assert => {
+    const player = 'rock';
+    const computer = 'scissors';
+    const expected = 'win';
+    const result = checkResult(player, computer);
+    assert.equal(result, expected);
+});
+
+test('Paper loses to scissors', assert => {
     const player = 'paper';
     const computer = 'scissors';
     const expected = 'lose';
-    // act
     const result = checkResult(player, computer);
-    // assert
+    assert.equal(result, expected);
+});
+
+test('Also scissors beat paper', assert => {
+    const player = 'scissors';
+    const computer = 'paper';
+    const expected = 'win';
+    const result = checkResult(player, computer);
     assert.equal(result, expected);
 });
 
 test('a draw', assert => {
-    // arrange
     const player = 'paper';
     const computer = 'paper';
     const expected = 'draw';
-    // act
     const result = checkResult(player, computer);
-    // assert
     assert.equal(result, expected);
 });
