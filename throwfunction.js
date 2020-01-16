@@ -1,4 +1,3 @@
-//need to export it all
 export { getRandomThrow, getThrowFromNumber, checkResult };
 
 function getRandomThrow() {

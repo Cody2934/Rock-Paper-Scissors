@@ -1,4 +1,3 @@
-//need imports
 import { getRandomThrow, checkResult } from './throwfunction.js';
 
 const button = document.getElementById('submit-button');
@@ -22,9 +21,6 @@ button.addEventListener('click', () => {
     const computerChoice = getRandomThrow();
     const result = checkResult(userChoice, computerChoice);
     
-    if (computer === 'rock') return booya.classList.remove('hidden');
-
-
     if (result === 'win') {
         wins ++;
         winsDisplay.textContent = wins;
