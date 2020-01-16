@@ -1,16 +1,38 @@
-// IMPORT MODULES under test here:
-// import example from '../src/example.js';
 
+//need to test it all
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
-    //Arrange
-    // Set up your parameters and expectations
+QUnit.module('checkResult');
 
-    //Act 
-    // Call the function you're testing and set the result to a const
+test('Paper beats rock', assert => {
+    // arrange
+    const player = 'paper';
+    const computer = 'rock';
+    const expected = 'win';
+    // act
+    const result = checkResult(player, computer);
+    // assert
+    assert.equal(result, expected);
+});
 
-    //Assert
-    // Make assertions about what is expected valid result
-    assert.equal(true, false);
+test('Player loses', assert => {
+    // arrange
+    const player = 'paper';
+    const computer = 'scissors';
+    const expected = 'lose';
+    // act
+    const result = checkResult(player, computer);
+    // assert
+    assert.equal(result, expected);
+});
+
+test('a draw', assert => {
+    // arrange
+    const player = 'paper';
+    const computer = 'paper';
+    const expected = 'draw';
+    // act
+    const result = checkResult(player, computer);
+    // assert
+    assert.equal(result, expected);
 });

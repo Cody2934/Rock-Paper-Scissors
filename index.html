@@ -11,9 +11,31 @@
 <header>
     <h1>Rock, Paper, Scissors</h1>
   </header>
-<body>
-    
-</body>
+  <main>
+    <p>An easily memorised rule determines the winner: Rock breaks scissors, scissors cuts paper, paper covers rock. In other words, the one who chooses rock beats the one who chooses scissors; scissors in turn beats paper; and paper beats rock. Both players choosing the same results in a tie</p>
+
+    <label>
+      <input type="radio" name="player-choice" value="rock" checked>Rock
+    </label>
+    <br></br>
+
+    <label>
+      <input type="radio" name="player-choice" value="paper">Paper
+    </label>
+    <br></br>
+
+    <label>
+      <input type="radio" name="player-choice" value="scissors">Scissors
+    </label>
+    <br></br>
+
+    <button id='submit-button'>Shoot!</button>
+    <section>
+      <p id="result-display"></p>
+      <p id="result-tally">Wins: <span id='wins'>0</span> Losses: <span id='losses'>0</span> Draws: <span id='draws'>0</span></p>
+    </section>
+  </main>
+  <footer>MAKING THIS GAME SUCKED</footer>
 
     <script src="app.js"></script>
     

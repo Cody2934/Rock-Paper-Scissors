@@ -1,41 +1,34 @@
-let userButton = document.querySelector("input[name=choice]:checked");
+//need imports
 
-const computerChoice = types[ Math.floor(Math.random() * (types.lengh))];
+const resultDisplay = document.getElementById('result-display');
+const button = document.getElementById('submit-button');
+const winsDisplay = document.getElementById('wins');
+const lossesDisplay = document.getElementById('losses');
+const drawsDisplay = document.getElementById('draws');
 
-function play() => {
-    let types = ['rock', 'paper', 'scissors'];
-    let computerChoice = types[Math.floor(Math.random() * (types.lengh))];
-    document.getElementById("choiceDisplay").innerText = computerChoice;
-    let userButton = document.querySelector("input[name=choice]:checked");
-    if (userButton) {
-        let userChoice = userButton.value;
+let wins = 0;
+let losses = 0;
+let draws = 0;
+
+console.log('buiscuts');
+
+button.addEventListener('click', () => {
+    const userInput = document.querySelector('input:checked');
+    const userChoice = userInput.value;
+    const computerChoice = getRandomThrow();
+    const result = checkResult(userChoice, computerChoice);
+  
+    if (result === 'win') {
+        wins ++;
+        winsDisplay.textContent = wins;
+        resultDisplay.textContent = 'You win!';
+    } else if (result === 'lose') {
+        losses++;
+        lossesDisplay.textContent = losses;
+        resultDisplay.textContent = 'You lose!';
     } else {
-        alert("You have to choose Rock, Paper, or Scissors Frist");
-        return;
+        draws++;
+        drawsDisplay.textContent = draws;
+        resultDisplay.textContent = 'Draw!';
     }
-    if (userChoice == computerChoice) {
-        document.getElementById("result").textContent = "Tie";
-        return;
-    }
-    switch (computerChoice) {
-        case "rock":
-            if (userChoice == "paper") {
-                document.getElementById("result").textContent = "Paper cover rock, you win!";
-            } else {
-                document.getElementById("result") = "Rock breaks scissors, you lose!";}
-            break;
-        case "paper":
-            if (userChoice == "scissors") {
-                document.getElementById("result").textContent = "Scissors cut paper, you win!";
-            } else {
-                document.getElementById("result").textContent = "Paper covers rock, you lose!";
-            }
-            break;
-        case "scissors":
-            if (userChoice = "rock") {
-                document.getElementById("result").textContent = "Rock breaks scissors, you win!";
-            } else {
-                document.getElementById("result").textContent = "Scissors cut paper, you lose!;"
-            }
-    }
-}
+});
