@@ -1,0 +1,61 @@
+/* plain jane background */
+body {
+    background-color: burlywood;
+}
+
+/* fancy font for header */
+header {
+    font-family: cursive;
+}
+
+/* into gets fancy font */
+#intro {
+    font-family: fantasy;
+}
+
+/* you can grab all images and resize them all at once, mind blown */
+img {
+    width: 200px;
+    height: 100px;
+} 
+
+/*get rid of radio button*/
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/*use the image as a radio button*/
+[type=radio]:checked + img {
+    border: 5px dotted #f00;
+    border-radius: 50%;
+}
+
+[type=radio]:focus {
+    border-radius: 50%;
+}
+
+/* fancy button from htmlcheatsheet */
+button {
+    color: rgb(255, 255, 255); 
+    font-size: 16px; 
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+/* hides images until I need them */
+.hidden {
+    opacity: 0;
+}
